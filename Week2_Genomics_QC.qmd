@@ -1,0 +1,26 @@
+---
+title: "Week2_Day1_QC"
+format: html
+editor: visual
+---
+
+## Load libraries to confirm installation
+
+```{r}
+library(Rqc) 
+library(fastqcr) 
+library(QuasR) 
+library(ShortRead) 
+library(ggplot2)
+print("All Bioconductor packages loaded successfully!")
+```
+
+```{r}
+# Define the path to the directory containing the example fastq files
+fastq_dir <- system.file(package="ShortRead", "extdata/E-MTAB-1147")
+fastq_dir
+
+# Run the QC analysis on ALL .fastq.gz files in that directory
+qc_result <- rqc(path = fastq_dir, pattern = ".fastq.gz", openBrowser=FALSE)
+qc_result
+```
