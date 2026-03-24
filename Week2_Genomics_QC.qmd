@@ -93,9 +93,3 @@ ggsave("read_frequency.png", plot = p_freq)
 
 If I saw a massive spike at the far right of this plot, I would be more worried about PCR Bias
 
-## Creating Environment
-
-```{bash}
-conda create -n sequali_env -c conda-forge -c bioconda sequali
-
-```
