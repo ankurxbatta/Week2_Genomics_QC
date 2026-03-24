@@ -435,7 +435,7 @@ mkdir -p fastqc_results
 
 # 2. Run FastQC
 # Replace [PASTE_PATH_HERE] with the path you copied from R
-fastqc /Users/owang/Library/R/arm64/4.4/library/ShortRead/extdata/E-MTAB-1147/*.fastq.gz -o fastqc_results/
+fastqc /Users/abatta00/Library/R/arm64/4.4/library/ShortRead/extdata/E-MTAB-1147/*.fastq.gz -o fastqc_results/
 ```
 
 ::: {.callout-important}
@@ -666,6 +666,11 @@ filtlong --min_length 1000 --min_mean_q 7 \
 #  filtlong --min_length 1000 --min_mean_q 7 \
 # ./raw_reads/ont.reads.fastq.gz | gzip > ./clean_reads/ont_filtered2.fastq.gz
 ```
+```{bash}
+filtlong --min_length 1100 --min_mean_q 7 \
+  barcode02.unclassified.fq | gzip > clean_reads/ont_filtered2.fastq.gz
+```
+
 
 ## **Step 5: The Final Verification & Comparison**
 
