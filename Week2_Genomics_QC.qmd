@@ -16,6 +16,23 @@ print("All Bioconductor packages loaded successfully!")
 ```
 
 ```{r}
+# Setup knitr options for the report generation
+# This ensures that even in a non-interactive environment, 
+# the automated report renders successfully.
+knitr::opts_chunk$set(
+  eval = TRUE,
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE
+)
+
+# Generate the HTML report
+# By specifying an outdir, we tell Rqc exactly where to put the results
+dir.create("Rqc_Full_Report")
+reportFile <- rqcReport(qc_result, outdir = "Rqc_Full_Report")
+```
+
+```{r}
 # Define the path to the directory containing the example fastq files
 fastq_dir <- system.file(package="ShortRead", "extdata/E-MTAB-1147")
 fastq_dir
@@ -73,3 +90,5 @@ p_freq <- rqcReadFrequencyPlot(qc_result)
 ggsave("read_frequency.png", plot = p_freq)
 
 ```
+
+If I saw a massive spike at the far right of this plot, I would be more worried about PCR Bias
