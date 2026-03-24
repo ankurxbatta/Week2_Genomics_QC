@@ -39,3 +39,37 @@ p_avg
 ggsave("average_quality.png", plot = p_avg)
 
 ```
+
+```{r}
+rqcCycleQualityBoxPlot(qc_result)
+```
+
+```{r}
+p_qual <- rqcCycleQualityBoxPlot(qc_result) +
+  geom_hline(yintercept = 30, color = "green", linetype = "dashed")
+
+p_qual
+
+ggsave("quality_boxplot.png", plot = p_qual)
+```
+
+```{r}
+rqcCycleBaseCallsLinePlot(qc_result)
+```
+
+```{r}
+p_base <- rqcCycleBaseCallsLinePlot(qc_result)
+
+ggsave("base_content_plot.png", plot = p_base)
+```
+
+```{r}
+rqcReadFrequencyPlot(qc_result)
+```
+
+```{r}
+p_freq <- rqcReadFrequencyPlot(qc_result)
+
+ggsave("read_frequency.png", plot = p_freq)
+
+```
