@@ -24,3 +24,16 @@ fastq_dir
 qc_result <- rqc(path = fastq_dir, pattern = ".fastq.gz", openBrowser=FALSE)
 qc_result
 ```
+
+```{r}
+rqcReadQualityBoxPlot(qc_result)
+```
+
+```{r}
+p_avg <- rqcReadQualityBoxPlot(qc_result) + 
+  geom_hline(yintercept = 30, color = "green", linetype = "dashed")
+
+p_avg
+
+
+```
