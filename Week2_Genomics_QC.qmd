@@ -36,4 +36,6 @@ p_avg <- rqcReadQualityBoxPlot(qc_result) +
 p_avg
 
 
+ggsave("average_quality.png", plot = p_avg)
+
 ```
